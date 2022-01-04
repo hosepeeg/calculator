@@ -18,6 +18,14 @@ const zeroButton = document.getElementById("zeroButton");
 const dotButton = document.getElementById("dotButton");
 const equalButton = document.getElementById("equalButton");
 
+let numberOne = 0;
+let numberTwo = undefined;
+let operation = "";
+
+function operate(numberOne, numberTwo, operation){
+    
+}
+
 function add(a, b){
     return a+b;
 }
