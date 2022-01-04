@@ -1,22 +1,22 @@
-const plusButton = 
-const minusButton =
-const multiplyButton =
-const divideButton =
-const modulasButton =
-const clearButton =
-const backSpaceButton =
-const oneButton = 
-const twoButton =
-const threeButton =
-const fourButton =
-const fiveButton =
-const sixButton =
-const sevenButton =
-const eightButton =
-const nineButton = 
-const zeroButton =
-const dotButton =
-const equalButton = 
+const addButton = document.getElementById("addButton");
+const subtractButton = document.getElementById("subtractButton");
+const multiplyButton = document.getElementById("multiplyButton");
+const divideButton = document.getElementById("divideButton");
+const modulasButton = document.getElementById("modulasButton");
+const clearButton = document.getElementById("clearButton");
+const backSpaceButton = document.getElementById("backSpaceButton");
+const oneButton = document.getElementById("oneButton");
+const twoButton = document.getElementById("twoButton");
+const threeButton = document.getElementById("threeButton");
+const fourButton = document.getElementById("fourButton");
+const fiveButton = document.getElementById("fiveButton");
+const sixButton = document.getElementById("sixButton");
+const sevenButton = document.getElementById("sevenButton");
+const eightButton = document.getElementById("eightButton");
+const nineButton = document.getElementById("nineButton");
+const zeroButton = document.getElementById("zeroButton");
+const dotButton = document.getElementById("dotButton");
+const equalButton = document.getElementById("equalButton");
 
 function add(a, b){
     return a+b;
