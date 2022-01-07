@@ -42,6 +42,10 @@ function operate(a, b, operator){
             result = modulas(parseInt(a), parseInt(b));
             break;
     }
+    numberOne = '';
+    numberTwo = '';
+    operation = undefined;
+    pA.innerHTML = result;
 }
 
 function add(a, b){
@@ -73,19 +77,36 @@ function clear(){
 }
 
 function inputNumber(currentNum){
-
     if(operation === undefined){
         numberOne += currentNum.className;
-        pA.innerHTML += currentNum.className;
+        if(pA.innerHTML == '0'){
+            pA.innerHTML = currentNum.className;
+        }
+        else if(pA.innerHTML == result){
+            pA.innerHTML = currentNum.className;
+        }
+        else{
+            pA.innerHTML += currentNum.className;
+        }
     }
     else{
         numberTwo += currentNum.className;
+        if(pA.innerHTML == numberOne){
+            pA.innerHTML = currentNum.className;
+        }
+        else{
+            pA.innerHTML += currentNum.className;
+        }
     }
 }
 
 function inputOperator(currentOperator){
     operation = currentOperator.className;
 }
+
+zeroButton.addEventListener(`click`, function(){
+    inputNumber(zeroButton)
+});
 
 oneButton.addEventListener(`click`, function(){
     inputNumber(oneButton)
