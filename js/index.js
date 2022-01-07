@@ -17,6 +17,7 @@ const nineButton = document.getElementById("nineButton");
 const zeroButton = document.getElementById("zeroButton");
 const dotButton = document.getElementById("dotButton");
 const equalButton = document.getElementById("equalButton");
+const pA = document.querySelector(".a");
 
 let numberOne = "";
 let numberTwo = "";
@@ -75,6 +76,7 @@ function inputNumber(currentNum){
 
     if(operation === undefined){
         numberOne += currentNum.className;
+        pA.innerHTML += currentNum.className;
     }
     else{
         numberTwo += currentNum.className;
@@ -93,8 +95,52 @@ twoButton.addEventListener(`click`, function(){
     inputNumber(twoButton)
 });
 
+threeButton.addEventListener(`click`, function(){
+    inputNumber(threeButton)
+});
+
+fourButton.addEventListener(`click`, function(){
+    inputNumber(fourButton)
+});
+
+fiveButton.addEventListener(`click`, function(){
+    inputNumber(fiveButton)
+});
+
+sixButton.addEventListener(`click`, function(){
+    inputNumber(sixButton)
+});
+
+sevenButton.addEventListener(`click`, function(){
+    inputNumber(sevenButton)
+});
+
+eightButton.addEventListener(`click`, function(){
+    inputNumber(eightButton)
+});
+
+nineButton.addEventListener(`click`, function(){
+    inputNumber(nineButton)
+});
+
 plusButton.addEventListener(`click`, function(){
     inputOperator(plusButton)
+});
+
+subtractButton.addEventListener(`click`, function(){
+    inputOperator(subtractButton)
+});
+
+multiplyButton.addEventListener(`click`, function(){
+    inputOperator(multiplyButton)
+});
+
+divideButton.addEventListener(`click`, function(){
+    inputOperator(divideButton)
+});
+
+modulasButton.addEventListener(`click`, function(){
+    inputOperator(modulasButton)
 });
 
 equalButton.addEventListener(`click`, function(){
