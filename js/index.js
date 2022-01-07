@@ -18,12 +18,17 @@ const zeroButton = document.getElementById("zeroButton");
 const dotButton = document.getElementById("dotButton");
 const equalButton = document.getElementById("equalButton");
 
-let numberOne = 0;
-let numberTwo = undefined;
-let operation = "";
+let numberOne = "";
+let numberTwo = "";
+let operation = undefined;
+let result = "";
 
-function operate(numberOne, numberTwo, operation){
-    
+function operate(a, b, operator){
+    switch (operator) {
+        case '+':
+            result = add(parseInt(a), parseInt(b));
+            break;
+    }
 }
 
 function add(a, b){
@@ -54,3 +59,32 @@ function clear(){
 
 }
 
+function inputNumber(currentNum){
+
+    if(operation === undefined){
+        numberOne += currentNum.className;
+    }
+    else{
+        numberTwo += currentNum.className;
+    }
+}
+
+function inputOperator(currentOperator){
+    operation = currentOperator.className;
+}
+
+oneButton.addEventListener(`click`, function(){
+    inputNumber(oneButton)
+});
+
+twoButton.addEventListener(`click`, function(){
+    inputNumber(twoButton)
+});
+
+plusButton.addEventListener(`click`, function(){
+    inputOperator(plusButton)
+});
+
+equalButton.addEventListener(`click`, function(){
+    operate(numberOne, numberTwo, operation);
+});
