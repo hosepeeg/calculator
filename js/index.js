@@ -27,19 +27,19 @@ let result = "";
 function operate(a, b, operator){
     switch (operator) {
         case '+':
-            result = add(parseInt(a), parseInt(b));
+            result = add(parseFloat(a), parseFloat(b));
             break;
         case '-':
-            result = subtract(parseInt(a), parseInt(b));
+            result = subtract(parseFloat(a), parseFloat(b));
             break;
         case 'x':
-            result = multiply(parseInt(a), parseInt(b));
+            result = multiply(parseFloat(a), parseFloat(b));
             break;
         case '÷':
-            result = divide(parseInt(a), parseInt(b));
+            result = divide(parseFloat(a), parseFloat(b));
             break;
         case '%':
-            result = modulas(parseInt(a), parseInt(b));
+            result = modulas(parseFloat(a), parseFloat(b));
             break;
     }
     numberOne = '';
@@ -103,6 +103,10 @@ function inputNumber(currentNum){
 function inputOperator(currentOperator){
     operation = currentOperator.className;
 }
+
+dotButton.addEventListener(`click`, function(){
+    inputNumber(dotButton)
+});
 
 zeroButton.addEventListener(`click`, function(){
     inputNumber(zeroButton)
