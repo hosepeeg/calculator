@@ -23,6 +23,7 @@ let numberOne = "";
 let numberTwo = "";
 let operation = undefined;
 let result = "";
+lastClick = undefined;
 
 function operate(a, b, operator){
     switch (operator) {
@@ -42,7 +43,7 @@ function operate(a, b, operator){
             result = modulas(parseFloat(a), parseFloat(b));
             break;
     }
-    numberOne = '';
+    numberOne = result;
     numberTwo = '';
     operation = undefined;
     pA.innerHTML = result;
@@ -77,6 +78,11 @@ function clear(){
 }
 
 function inputNumber(currentNum){
+    if(lastClick == `=`){
+        numberOne = '';
+    }
+
+    lastClick = currentNum.className;
     if(operation === undefined){
         numberOne += currentNum.className;
         if(pA.innerHTML == '0'){
@@ -101,6 +107,10 @@ function inputNumber(currentNum){
 }
 
 function inputOperator(currentOperator){
+    lastClick = currentOperator.className;
+    if(operation){
+        operate(numberOne, numberTwo, operation);
+    }
     operation = currentOperator.className;
 }
 
@@ -169,5 +179,6 @@ modulasButton.addEventListener(`click`, function(){
 });
 
 equalButton.addEventListener(`click`, function(){
+    lastClick = '=';
     operate(numberOne, numberTwo, operation);
 });
