@@ -26,6 +26,10 @@ let result = "";
 lastClick = undefined;
 
 function operate(a, b, operator){
+    if(b == ''){
+        return;
+    }
+
     switch (operator) {
         case '+':
             result = add(parseFloat(a), parseFloat(b));
@@ -43,7 +47,9 @@ function operate(a, b, operator){
             result = modulas(parseFloat(a), parseFloat(b));
             break;
     }
-    numberOne = result;
+    if(result != 0){
+        numberOne = result;
+    }
     numberTwo = '';
     operation = undefined;
     pA.innerHTML = result;
@@ -111,6 +117,11 @@ function inputOperator(currentOperator){
     if(operation){
         operate(numberOne, numberTwo, operation);
     }
+
+    if(numberOne == ''){
+        numberOne = 0;
+    }
+
     operation = currentOperator.className;
 }
 
