@@ -28,6 +28,18 @@ function operate(a, b, operator){
         case '+':
             result = add(parseInt(a), parseInt(b));
             break;
+        case '-':
+            result = subtract(parseInt(a), parseInt(b));
+            break;
+        case 'x':
+            result = multiply(parseInt(a), parseInt(b));
+            break;
+        case '÷':
+            result = divide(parseInt(a), parseInt(b));
+            break;
+        case '%':
+            result = modulas(parseInt(a), parseInt(b));
+            break;
     }
 }
 
