@@ -94,6 +94,13 @@ function inputNumber(currentNum){
         numberOne = '';
     }
 
+    if(currentNum == dotButton){
+        let workingNum = pA.innerHTML;
+        if(workingNum.includes(`.`)){
+            return;
+        }
+    }
+
     lastClick = currentNum.className;
     if(operation === undefined){
         numberOne += currentNum.className;
@@ -123,6 +130,7 @@ function inputNumber(currentNum){
 
 function inputOperator(currentOperator){
     lastClick = currentOperator.className;
+
     if(operation){
         operate(numberOne, numberTwo, operation);
     }
