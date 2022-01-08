@@ -76,7 +76,10 @@ function modulas(a, b){
 }
 
 function backSpace(){
-
+    if(numberOne){
+        numberTwo = '';
+        pA.innerHTML = '0';
+    }
 }
 
 function clear(){
@@ -106,7 +109,10 @@ function inputNumber(currentNum){
     }
     else{
         numberTwo += currentNum.className;
-        if(pA.innerHTML == numberOne){
+        if(pA.innerHTML == '0'){
+            pA.innerHTML = currentNum.className;
+        }
+        else if(pA.innerHTML == numberOne){
             pA.innerHTML = currentNum.className;
         }
         else{
@@ -198,3 +204,4 @@ equalButton.addEventListener(`click`, function(){
 });
 
 clearButton.addEventListener(`click`, clear);
+backSpaceButton.addEventListener(`click`, backSpace);
