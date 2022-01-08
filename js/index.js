@@ -80,7 +80,10 @@ function backSpace(){
 }
 
 function clear(){
-
+    numberOne = '';
+    numberTwo = '';
+    operation = undefined;
+    pA.innerHTML = '0';
 }
 
 function inputNumber(currentNum){
@@ -193,3 +196,5 @@ equalButton.addEventListener(`click`, function(){
     lastClick = '=';
     operate(numberOne, numberTwo, operation);
 });
+
+clearButton.addEventListener(`click`, clear);
