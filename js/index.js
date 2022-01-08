@@ -1,3 +1,4 @@
+// Creating all element selectors
 const addButton = document.getElementById("addButton");
 const subtractButton = document.getElementById("subtractButton");
 const multiplyButton = document.getElementById("multiplyButton");
@@ -19,17 +20,22 @@ const dotButton = document.getElementById("dotButton");
 const equalButton = document.getElementById("equalButton");
 const pA = document.querySelector(".a");
 
-let numberOne = "";
-let numberTwo = "";
-let operation = undefined;
-let result = "";
-lastClick = undefined;
+//creating global variables
+let numberOne = "";     //holds value for first number
+let numberTwo = "";     //holds value for seocnd number
+let operation = undefined;  //holds value for operator
+let result = "";            //holds value for result of operation
+lastClick = undefined;      //holds value of last clicked element (needed incase user clicks '=' program knows how to handle next given value)
 
+
+//completes operation based on given operator and operands
 function operate(a, b, operator){
+    //if user did not enter 2nd value program will not continue until it is given
     if(b == ''){
         return;
     }
 
+    //check the operator and complete the operation based on given values
     switch (operator) {
         case '+':
             result = add(parseFloat(a), parseFloat(b));
@@ -47,14 +53,20 @@ function operate(a, b, operator){
             result = modulas(parseFloat(a), parseFloat(b));
             break;
     }
+
+    //make first number = result in case user decides to work with given result
     if(result != 0){
         numberOne = result;
     }
+
+    //clear all other values and print result
     numberTwo = '';
     operation = undefined;
     pA.innerHTML = result;
 }
 
+
+//math for operators
 function add(a, b){
     return a+b;
 }
@@ -75,6 +87,8 @@ function modulas(a, b){
     return a%b;
 }
 
+
+//clear current working numbers value
 function backSpace(){
     if(numberOne){
         numberTwo = '';
@@ -82,6 +96,8 @@ function backSpace(){
     }
 }
 
+
+//clear all stored values in calculator and start from beggining
 function clear(){
     numberOne = '';
     numberTwo = '';
@@ -89,11 +105,15 @@ function clear(){
     pA.innerHTML = '0';
 }
 
+
+//enters number into calculator
 function inputNumber(currentNum){
+    //if lastclick was = then number one is reset
     if(lastClick == `=`){
         numberOne = '';
     }
 
+    //ensure multiple decimal valeus are not entered for current working number
     if(currentNum == dotButton){
         let workingNum = pA.innerHTML;
         if(workingNum.includes(`.`)){
@@ -101,6 +121,7 @@ function inputNumber(currentNum){
         }
     }
 
+    //enter number to correct number variable
     lastClick = currentNum.className;
     if(operation === undefined){
         numberOne += currentNum.className;
@@ -128,13 +149,16 @@ function inputNumber(currentNum){
     }
 }
 
+//select operator for operation
 function inputOperator(currentOperator){
     lastClick = currentOperator.className;
 
+    //if an operator has already been entered compute
     if(operation){
         operate(numberOne, numberTwo, operation);
     }
 
+    //if there was no value entered for first number, make it 0
     if(numberOne == ''){
         numberOne = 0;
     }
@@ -142,6 +166,8 @@ function inputOperator(currentOperator){
     operation = currentOperator.className;
 }
 
+
+//Event handlers for buttons
 dotButton.addEventListener(`click`, function(){
     inputNumber(dotButton)
 });
