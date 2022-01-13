@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color:#f6f6f6;;
+    background-color:#616161;;
 }
 
 .container{
@@ -51,14 +51,27 @@ button{
     background-color: #3B3B3B;
 }
 
+button:hover{
+    background-color: rgb(49, 49, 49);
+}
+
 #clearButton, #backSpaceButton, #modulasButton{
     color: black;
     background-color: lightgray;
 }
 
+#clearButton:hover, #backSpaceButton:hover, #modulasButton:hover{
+    background-color: darkgray;
+}
+
 #divideButton, #subtractButton, #multiplyButton,
  #plusButton{
     background-color: orange;
+ }
+
+ #divideButton:hover, #subtractButton:hover, #multiplyButton:hover,
+ #plusButton:hover{
+    background-color: darkorange;
  }
 
  #zeroButton{
