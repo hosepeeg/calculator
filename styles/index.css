@@ -46,8 +46,6 @@ button{
     margin-bottom: 20px;
     color: white;
     text-align: right;
-    word-wrap: break-word;
-    word-break: break-all;
     background-color: #3B3B3B;
 }
 
