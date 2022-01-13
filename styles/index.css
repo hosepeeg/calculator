@@ -20,7 +20,7 @@ body {
     width: 400px;
     padding: 20px;
     border-radius: 15px;
-    background-color: black;
+    background-color: #212121;;
 }
 
 .buttons{
@@ -36,17 +36,19 @@ button{
     cursor: pointer;
     border: none;
     color: white;
+    box-shadow: 4px 5px 5px 0px rgb(0 0 0 / 70%);
 }
 
 .inout{
-    padding: 10px 20px;
+    padding: 30px 20px;
     border-radius: 15px;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: white;
     text-align: right;
     word-wrap: break-word;
     word-break: break-all;
+    background-color: #3B3B3B;
 }
 
 #clearButton, #backSpaceButton, #modulasButton{
@@ -57,4 +59,9 @@ button{
 #divideButton, #subtractButton, #multiplyButton,
  #plusButton{
     background-color: orange;
+ }
+
+ #zeroButton{
+    grid-column: 1/3;
+    border-radius: 2.5rem;
 }
