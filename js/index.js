@@ -128,6 +128,9 @@ function inputNumber(currentNum){
         if(pA.innerHTML == '0'){
             pA.innerHTML = currentNum.className;
         }
+        else if(pA.innerHTML == 'NaN'){
+            pA.innerHTML = currentNum.className;
+        }
         else if(pA.innerHTML == result){
             pA.innerHTML = currentNum.className;
         }
