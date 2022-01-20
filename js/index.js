@@ -143,6 +143,9 @@ function inputNumber(currentNum){
         if(pA.innerHTML == '0'){
             pA.innerHTML = currentNum.className;
         }
+        else if(pA.innerHTML == 'NaN'){
+            pA.innerHTML = currentNum.className;
+        }
         else if(pA.innerHTML == numberOne){
             pA.innerHTML = currentNum.className;
         }
@@ -155,7 +158,6 @@ function inputNumber(currentNum){
 //select operator for operation
 function inputOperator(currentOperator){
     lastClick = currentOperator.className;
-
     //if an operator has already been entered compute
     if(operation){
         operate(numberOne, numberTwo, operation);
